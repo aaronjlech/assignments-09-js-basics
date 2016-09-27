@@ -123,25 +123,17 @@ console.assert(sum(5,-5) === null)
 // boolean operators, or both (but not neither).
 // var minimum = function(a, b, c, d){
 var minimum = function(a, b, c, d){
-	if(a < b && a < c){
-		if(a < d){
+	if(a < b && a < c && a < d){
 			return a
 		}
-	}
-		if(b < a && b < c){
-			if(b < d){
+		else if(b < c && b < d){
 				return b
 			}
-		}
-			if(c < a && c < b){
-				if(c < d){
-					return c
-				}
+			 else if(c < b && c < d){
+				return c
 			}
-			if(d < a && d < b){
-				if(d < c){
+			else{
 					return d
-				}
 			}
 }
 
@@ -222,7 +214,7 @@ console.assert(NUMBER === 48)
 	var ORACLE = 'NO'
 
 var conditionallyInvoke = function(func){
-	if(ORACLE == 'YES'){
+	if(ORACLE === 'YES'){
 		func();
 
 	}
